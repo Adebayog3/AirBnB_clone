@@ -12,6 +12,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
@@ -23,6 +24,7 @@ class HBNBCommand(cmd.Cmd):
         """Exits on end-of-file input."""
         print()
         return True  # Signal to exit
+
     def do_create(self, args):
         """Creates a new instance of a model."""
         if not args:
@@ -37,6 +39,7 @@ class HBNBCommand(cmd.Cmd):
             print(f"{new_instance.id}")
         except AttributeError:
             print(f"** class doesn't exist **")
+
         def do_show(self, args):
             """Shows the string representation of an instance."""
         if not args:
@@ -60,6 +63,7 @@ class HBNBCommand(cmd.Cmd):
             print(instance)
         else:
             print(f"** no instance found **")
+
         def do_destroy(self, args):
             """Destroys an instance based on its ID."""
         if not args:
@@ -85,6 +89,7 @@ class HBNBCommand(cmd.Cmd):
             print(f"** {class_name} {id} deleted**")
         else:
             print(f"** no instance found **")
+
         def do_all(self, args):
             """Prints all instances of a class or all instances."""
         if args:
@@ -136,6 +141,7 @@ class HBNBCommand(cmd.Cmd):
             print(f"** {class_name} {id} updated **")
         else:
             print(f"** no instance found **")
+
         def do_all(self, args):
             """Retrieves all instances of a class or all instances."""
         if args:
